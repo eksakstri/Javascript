@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question4.17</title>
+</head>
+<body>
+    <img src="image1.jpg" width="300px" height="500px" onclick="O()">
+    <div>
+        <form>
+            <input type="button" value="Close" onclick="C()">
+        </form>
+    </div>
+    <script>
+        var X;
+        function O() {
+            X=window.open("http://www.google.com","","width=800px,height=500px")
+        }
+        function C() {
+            X.close()
+        }
+    </script>
+</body>
+</html>

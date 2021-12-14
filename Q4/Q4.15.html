@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question4.15</title>
+    <style>
+        .image{
+            height: 500px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="back()" id="back">Backward</button>
+    <img class="image" src="image1.jpg">
+    <button onclick="front()" id="front">forward</button>
+    <script>
+        var x=1;
+        var i=document.getElementsByTagName("img")[0];
+        var f=document.getElementById("front")
+        var b=document.getElementById("back")
+        function back(){
+            x--;
+            if (x==1){
+                i.src="image1.jpg";
+                b.style.display="none";
+                f.style.display="block";
+            }
+            else if (x==2){
+                i.src="image2.jpg";
+                b.style.display="block";
+                f.style.display="block";
+            }
+            else if (x==3){
+                i.src="image3.jpg";
+                b.style.display="block";
+                f.style.display="block";
+            }
+            else {
+                i.src="image4.jpg";
+                b.style.display="block";
+                f.style.display="block";
+            }
+        }
+        function front(){
+            x++;
+            if (x==1){
+                i.src="image1.jpg";
+                b.style.display="block";
+                f.style.display="block";
+            }
+            else if (x==2){
+                i.src="image2.jpg";
+                b.style.display="block";
+                f.style.display="block";
+            }
+            else if (x==3){
+                i.src="image3.jpg";
+                b.style.display="block";
+                f.style.display="block";
+            }
+            else {
+                i.src="image4.jpg";
+                b.style.display="block";
+                f.style.display="none";
+            }
+        }
+    </script>
+</body>
+</html>

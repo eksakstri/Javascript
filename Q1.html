@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question1</title>
+    <style>
+        .error
+        {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>FORM</h1>
+    <h3>
+        <form>
+            <label>Educational Qualification:</label>
+            <br>
+            <select id="yname" class="input">
+                <option>**select any one**</option>
+                <option>1 year</option>
+                <option>2 year</option>
+                <option>3 year</option>
+                <option>4 year</option>
+            </select>
+            <br><br>
+            <label>Name</label>
+            <br>
+            <input type="text" id="name" class="input">
+            <div id="nameError" class="error"></div>
+            <br><br>
+            <label>Phone number</label>
+            <br>
+            <input type="number" id="pnr" class="input">
+            <div id="pnrError" class="error"></div>
+            <br><br>
+            <label>Gender</label>
+            <br>
+            <select id="gender" class="input">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Others</option>
+            </select>
+            <br><br>
+            <label>Email</label>
+            <br>
+            <input type="text" id="email" class="input">
+            <div id="emailError" class="error"></div>
+            <br><br>
+            <label>Password</label>
+            <br>
+            <input type="text" id="pass" class="input">
+            <div id="passError" class="error"></div>
+            <br><br>
+            <label>Confirm Password</label>
+            <br>
+            <input type="text" id="conpass" class="input">
+            <div id="conpassError" class="error"></div>
+            <br><br>
+            <label>City</label>
+            <br>
+            <input type="text" id="city" class="input">
+            <div id="cityError" class="error"></div>
+            <br><br>
+            <button onclick="fn()" type="button" id="submit">Submit</button>
+        </form>
+    </h3>
+    <script src="Q1.js"></script>
+</body>
+</html>

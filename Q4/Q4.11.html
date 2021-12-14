@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question4.11</title>
+    <style>
+        .image
+        {
+            margin-left: 500px;
+            height: 500px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img class ="image" src = "image1.jpg" alt = "image">
+    <script>
+        document.getElementsByTagName("img")[0].addEventListener("click", function(){document.getElementsByTagName("img")[0].src = "image2.jpg"})
+    </script>
+</body>
+</html>

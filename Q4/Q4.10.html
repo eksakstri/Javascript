@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question4.10</title>
+    <style>
+        .image1{
+            margin-left: 50px;
+            height: 400px;
+            width: 250px;
+        }
+        .image3{
+            margin-left: 30px;
+            height: 400px;
+            width: 250px;
+        }
+        .image5{
+            margin-left: 30px;
+            height: 400px;
+            width: 250px;
+        }
+        .image6{
+            margin-left: 30px;
+            height: 400px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <img class="image1" src="image1.jpg" alt="image">
+    <img class="image3" src="image3.jpg" alt="image">
+    <img class="image5" src="image5.jpg" alt="image">
+    <img class="image6" src="image6.jpg" alt="image">
+    <script>
+        document.getElementsByTagName("img")[3].addEventListener("mouseover", function(){
+            for(var i=0;i<3;i++){
+                document.getElementsByTagName("img")[i].src="image2.jpg";
+            }
+        })
+        document.getElementsByTagName("img")[3].addEventListener("mouseout", function(){
+            document.getElementsByTagName("img")[0].src="image1.jpg";
+            document.getElementsByTagName("img")[1].src="image3.jpg";
+            document.getElementsByTagName("img")[2].src="image5.jpg";
+        })
+    </script>
+</body>
+</html>

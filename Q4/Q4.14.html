@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question4.14</title>
+    <script>
+        var x=0;
+        function func(){
+            x++;
+            if (x==1){
+                document.getElementsByTagName("img")[0].src="image1.jpg";
+            }
+            else if (x==2){
+                document.getElementsByTagName("img")[0].src="image2.jpg";
+            }
+            else if (x==3){
+                document.getElementsByTagName("img")[0].src="image3.jpg";
+            }
+            else{
+                document.getElementsByTagName("img")[0].src="image4.jpg";
+                x=0;
+            }
+        }
+    </script>
+    <style>
+        .image{
+            height: 500px;
+            width: 300px;
+            margin-left: 500px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <img class="image" src="image4.jpg" alt="image" onclick="func()">
+</body>
+</html>
