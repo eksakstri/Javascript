@@ -6,57 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question4.19</title>
 </head>
-<body onLoad="doCookie()">
-    <div id="visit"></div>
+<body onload="func()">
     <script>
-        cookie_name = "Counter_Cookie";
-        function doCookie() {
-        if(document.cookie)
+        function func()
         {
-            index = document.cookie.indexOf(cookie_name);
-        }
-        else
-        {
-            index = -1;
-        }
-        var expiry = new Date();
-        fun(expiry)
-        expiry.setTime(expiry.getTime()+(365*24*60*60*1000));
-        if (index == -1)
-        {document.cookie=cookie_name+"=1; expires=" + expiry;}
-        else
-        {
-        countbegin = (document.cookie.indexOf("=", index) + 1);
-        countend = document.cookie.indexOf(";", index);
-        if (countend == -1) {
-        countend = document.cookie.length;
-        }
-        count = eval(document.cookie.substring(countbegin, countend)) + 1;
-
-        document.cookie=cookie_name+"="+count+"; expires=" + expiry;
-        }
-        }
-        function gettimes() {
-            if(document.cookie) {
-            index = document.cookie.indexOf(cookie_name);
-            if (index != -1) {
-            countbegin = (document.cookie.indexOf("=", index) + 1);
-            countend = document.cookie.indexOf(";", index);
-            if (countend == -1) {
-            countend = document.cookie.length;
+            if(document.cookie.length == 0)
+            {
+                var D = new Date();
+                document.write("You visited this page for the first time.");
+                document.cookie = "username=1" +D+ "; expires = Mon, 04-Sep-2028 09:00:00 UTC";
             }
-            count = document.cookie.substring(countbegin, countend);
-            return count;
-    }
-    }
-    return 0;
-    }   
-    function fun(t){
-    if(gettimes()==0)
-    document.getElementById('visit').innerHTML="You have never visited before"
-    else 
-    document.getElementById('visit').innerHTML="You have visited "+gettimes()+" number of times <br> You last visited on "+t+""
-    }
+            else 
+            {
+                var T1="";
+                var T2="";
+                var C = document.cookie.split("=");
+                var D = Date();
+                var x=0;
+                document.cookie="username=" +C[1]+ ";expires=Mon, 16-Sep-2019 09:00:00 UTC";
+            }
+            for (var y in C[1])
+            {
+                if(!isNaN(parseInt(C[1][y])) && x==0)
+                {
+                    T1 += count [1][y];
+                }
+                else
+                {
+                    x+=1;
+                    T2 += count[1][y];
+                }
+            }
+            var num=parseInt(T1)+1;
+            document.write("You visited the website for the "+num+" time<br>");
+            document.write("You last visited on "+T2);
+            document.cookie="username="+num+D+";expires=Mon, 04-Sep-2028 09:00:00 UTC";
+        }
     </script>
 </body>
 </html>

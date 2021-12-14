@@ -6,88 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question4.16</title>
     <style>
-        #content{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        #container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        img{
-            width:72px;
-        }
-        .btn{
-            padding:5px;
-            background-color: orange;
-            color:white;
-            border: none;
-            width: 15%;
-        }
+    .marble{
+      position: absolute;
+      display: block;
+    }
+    .m1{
+      top: 30px;
+      left: 400px;
+    }
+    .m2{
+      top: 100px;
+      left: 300px;
+    }
+    .m3{
+      left: 300px;
+      top: 200px;
+    }
+    .m4{
+      left: 400px;
+      top: 270px;
+    }
+    .m5{
+      left: 500px;
+      top: 200px;
+    }
+    .m6{
+      left: 500px;
+      top: 100px;
+    }
     </style>
 </head>
-<body>
-    <div id="content">  
-    <div id="container">
-    <table>
-    <tbody>
-    <tr valign="top" align="center"><td>
-    <img src="marble1.jpg" id="pic1" onmouseout="myfunction()" onmouseover="stop()">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="marble1.jpg" id="pic2" onmouseout="myfunction()" onmouseovers="stop()">
-    </td></tr>
-    <tr valign="top" align="center"><td>
-    &nbsp;<br><br>
-    </td></tr>
-    <tr valign="top" align="center"><td>
-    <img src="marble1.jpg" id="pic6" onmouseout="myfunction()" onmouseover="stop()">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="marble1.jpg" onmouseout="myfunction()" onmouseover="stop()">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="marble1.jpg" id="pic3" onmouseout="myfunction()" onmouseover="stop()">
-    </td></tr>
-    <tr valign="top" align="center"><td>
-    &nbsp;<br><br>
-    </td></tr>
-    <tr valign="top" align="center"><td>
-    <img src="marble1.jpg" id="pic5" onmouseout="myfunction()" onmouseover="stop()">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="marble1.jpg" id="pic4" onmouseout="myfunction()" onmouseover="stop()">
-    </td></tr>
-    </tbody></table></div>
-    <button id="start" class="btn" onclick="myfunction()">START</button><br>
-    <button id="stop" class="btn" onclick="stop()">STOP</button>
-    </div>
-    <script>
-        var a=0
-        var timer;
-    function myfunction()
-    {
-        timer=setInterval('start()',200)
-    }    
-    function start()
-        {
-            ++a
-            if(a>6)
-            a=1
-            var s1="pic"+a
-            console.log(s1)
-            if(a==1)
-            var s2="pic6"
-            else
-            var s2="pic"+(a-1)
-            console.log(s2)
-            var element1=document.getElementById(s1)
-            element1.src="orange.jpg"
-            var element2=document.getElementById(s2)
-            element2.src="marble1.jpg"
-        }
-    function stop(){
-        clearInterval(timer)
+<body onload="start()">
+  
+  
+  <img id="m1" class="marble m1" src="marble1.jpg" onmouseout="start()" onmouseover="stop()">
+  <img id="m2" class="marble m2" src="marble1.jpg" onmouseout="start()" onmouseover="stop()">
+  <img id="m3" class="marble m3" src="marble1.jpg" onmouseout="start()" onmouseover="stop()">
+  <img id="m4" class="marble m4" src="marble1.jpg" onmouseout="start()" onmouseover="stop()">
+  <img id="m5" class="marble m5" src="marble1.jpg" onmouseout="start()" onmouseover="stop()">
+  <img id="m6" class="marble m6" src="marble1.jpg" onmouseout="start()" onmouseover="stop()">
+  <script>
+    var x=0;
+    var counter;
+    function start(){
+      counter = setInterval(begin, 1000);
     }
-    </script>
+    function begin(){
+      x=x+1;
+      if(x==7){
+        x=1;
+      }
+      if(x-1>1){
+        document.getElementById("m"+(x-1)).style.display="none";
+        document.getElementById("m"+(x-2)).style.display="block";
+      }
+      if(x==1){
+        document.getElementById("m6").style.display="none";
+        document.getElementById("m5").style.display="block";
+      }
+      if(x==2){
+        document.getElementById("m1").style.display="none";
+        document.getElementById("m6").style.display="block";
+      }
+    }
+    function stop(){
+      clearInterval(counter);
+    }
+  </script>
 </body>
 </html>
