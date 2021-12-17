@@ -6,7 +6,7 @@ var conpass = document.getElementById("conpass");
 var cityInput = document.getElementById("city");
 
 nameInput.addEventListener("blur", function(){
-    let regex=/^[a-z A-Z 0-9'\.\-\,\@\*\;\:]{2,30}$/;
+    let regex=/^[a-z A-Z 0-9'\-\!\#\$\%\&\'\*\+\/\=\?\^\_\|\{\}\~\\]{2,30}$/;
     let name = nameInput.value;
     if(regex.test(name)){
         document.getElementById("nameError").innerHTML="";
@@ -28,7 +28,7 @@ pnr.addEventListener("blur", function(){
 });
 
 emailInput.addEventListener("blur", function(){
-    let regex= /^([0-9a-zA-Z_\-\.]+)@([0-9a-zA-Z_\-\.]+)\.([a-zA-Z]){2,7}$/;
+    let regex= /^([0-9a-zA-Z_\-\!\#\$\%\&\'\*\+\/\=\?\^\_\|\{\}\~\\]+)@([0-9a-zA-Z_\-\.]+)\.([a-zA-Z]){2,7}$/;
     let email = emailInput.value;
     if(regex.test(email)){
         document.getElementById("emailError").innerHTML="";
@@ -62,7 +62,7 @@ conpass.addEventListener("blur", function(){
 
 cityInput.addEventListener("blur", function(){
 
-    let regex=/^[a-z A-Z 0-9 \.\-\,\@\*\;\:\/\\\|]{2,30}$/;
+    let regex=/^[a-z A-Z 0-9 \-\!\#\$\%\&\'\*\+\/\=\?\^\_\|\{\}\~\\]{2,30}$/;
     let city=cityInput.value;
     if(regex.test(city)){
         document.getElementById("cityError").innerHTML="";
@@ -72,7 +72,7 @@ cityInput.addEventListener("blur", function(){
     }
 });
 
-function fn(){
+function func(){
     if(nameInput.value == "" || pnr.value == "" || emailInput.value == "" || pass.value == "" || conpass.value == "" || cityInput.value == ""){
         alert("Fill all the fields");
     }
