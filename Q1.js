@@ -28,7 +28,7 @@ pnr.addEventListener("blur", function(){
 });
 
 emailInput.addEventListener("blur", function(){
-    let regex= /^([0-9a-zA-Z_\-\!\#\$\%\&\'\*\+\/\=\?\^\_\|\{\}\~\\]+)@([0-9a-zA-Z_\-\.]+)\.([a-zA-Z]){2,7}$/;
+    let regex= /^([0-9a-zA-Z_\-\!\#\$\%\&\'\*\+\/\=\?\^\_\|\{\}\~\\]+)@([0-9a-zA-Z_\-\.]+)([0-9a-zA-Z_\-]+)\.([a-zA-Z]){2,7}$/;
     let email = emailInput.value;
     if(regex.test(email)){
         document.getElementById("emailError").innerHTML="";
