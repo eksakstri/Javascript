@@ -6,7 +6,7 @@ var conpass = document.getElementById("conpass");
 var cityInput = document.getElementById("city");
 
 nameInput.addEventListener("blur", function(){
-    let regex=/^[a-zA-Z '\.\-]{2,30}$/;
+    let regex=/^[a-z A-Z 0-9'\.\-\,\@\*\;\:]{2,30}$/;
     let name = nameInput.value;
     if(regex.test(name)){
         document.getElementById("nameError").innerHTML="";
@@ -62,7 +62,7 @@ conpass.addEventListener("blur", function(){
 
 cityInput.addEventListener("blur", function(){
 
-    let regex=/^[a-zA-Z 0-9]{2,30}$/;
+    let regex=/^[a-z A-Z 0-9 \.\-\,\@\*\;\:\/\\\|]{2,30}$/;
     let city=cityInput.value;
     if(regex.test(city)){
         document.getElementById("cityError").innerHTML="";
